@@ -1,0 +1,27 @@
+#The site wide list of mongodb servers
+
+# the mongo servers need a mongod_port variable set, and they must not conflict.
+[mongo_servers]
+64.227.61.226 mongod_port=2700 ansible_connection=ssh ansible_user=root
+64.227.55.225 mongod_port=2701 ansible_connection=ssh ansible_user=root
+64.227.60.180 mongod_port=2702 ansible_connection=ssh ansible_user=root
+
+#The list of servers where replication should happen, by default include all servers
+[replication_servers]
+64.227.61.226 
+64.227.55.225
+64.227.60.180
+
+#The list of mongodb configuration servers, make sure it is 1 or 3
+[mongoc_servers]
+64.227.61.226
+64.227.55.225
+64.227.60.180
+
+
+#The list of servers where mongos servers would run. 
+[mongos_servers]
+161.35.26.202 ansible_connection=ssh ansible_user=root
+46.101.122.176 ansible_connection=ssh ansible_user=root
+
+
